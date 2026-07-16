@@ -8,11 +8,22 @@
 </head>
 <body>
     
-    <form action="" method="post" style="text-align: center;">
+    {{-- <form action="" method="post" style="text-align: center;">
+        @csrf
         <br><br>
         Name: <input type="text" name="name" id="name"><br><br>
         Email: <input type="email" name="email" id="email"><br><br>
         Password: <input type="password" name="password" id="password"><br><br>
+
+        <input type="submit" value="Submit">
+    </form> --}}
+
+     <form action="" method="post" style="text-align: center;">
+        @csrf
+        <br><br>
+        Name: <input type="text" name="name" id="name" value="{{ old('name') }}"><br><br>
+        Email: <input type="email" name="email" id="email" value="{{ old('email') }}"><br><br>
+        Password: <input type="password" name="password" id="password" value="{{ old('password') }}"><br><br>
 
         <input type="submit" value="Submit">
     </form>
