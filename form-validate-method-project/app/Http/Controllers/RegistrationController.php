@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class RegistrationController extends Controller
 {
     function showform() {
-        return view('registration');
+        return view('all-field-errors');
     }
 
     function signup(Request $request) {

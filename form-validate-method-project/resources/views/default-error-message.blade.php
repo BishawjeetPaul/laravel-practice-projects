@@ -8,26 +8,21 @@
 </head>
 <body>
     
-    {{-- <form action="" method="post" style="text-align: center;">
-        @csrf
-        <br><br>
-        Name: <input type="text" name="name" id="name"><br><br>
-        Email: <input type="email" name="email" id="email"><br><br>
-        Password: <input type="password" name="password" id="password"><br><br>
-
-        <input type="submit" value="Submit">
-    </form> --}}
-
-    <!-- Display Validation Errors -->
-    @if ($errors->any())
-        {{ $errors }}
-    @endif
     <form action="" method="post" style="text-align: center;">
         @csrf
         <br><br>
         Name: <input type="text" name="name" id="name" value="{{ old('name') }}"><br><br>
+        @error('name')
+            <span>{{ $message }}
+        @enderror
         Email: <input type="email" name="email" id="email" value="{{ old('email') }}"><br><br>
+        @error('email')
+            <span>{{ $message }}
+        @enderror
         Password: <input type="password" name="password" id="password" value="{{ old('password') }}"><br><br>
+        @error('password')
+            <span>{{ $message }}
+        @enderror
 
         <input type="submit" value="Submit">
     </form>
